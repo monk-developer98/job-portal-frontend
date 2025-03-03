@@ -16,6 +16,9 @@ const Card = ({ data }) => {
     employmentType,
     description,
   } = data;
+
+  console.log('data', data);
+  
   return (
    <section className="card">
         <Link to="/" className="flex gap-4 flex-col sm:flex-row items-start">
