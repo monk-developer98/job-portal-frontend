@@ -3,6 +3,7 @@ import Banner from "../components/Banner";
 import Card from "../components/Card.jsx";
 import Jobs from "./Jobs";
 import Sidebar from "../sidebar/Sidebar.jsx";
+import NewsLetter from "../components/NewsLetter.jsx";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -80,7 +81,9 @@ const Home = () => {
           postingDate,
         }) =>
           jobLocation.toLowerCase() === selected.toLowerCase() ||
+          experienceLevel.toLowerCase() === selected.toLowerCase() ||
           parseInt(maxPrice) <= parseInt(selected) ||
+          postingDate >= selected ||
           salaryType.toLowerCase() === selected.toLowerCase() ||
           employmentType.toLowerCase() === selected.toLowerCase()
       );
@@ -133,7 +136,9 @@ const Home = () => {
             ""
           )}
         </div>
-        <div className="bg-white p-4 rounded ">Right</div>
+        <div className="bg-white p-4 rounded ">
+          <NewsLetter />
+        </div>
       </div>
     </div>
   );
